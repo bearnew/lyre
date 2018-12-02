@@ -1,0 +1,16 @@
+<view class="switch-tab-wrapper">
+    <view class="switch-tab {{acitveIndex === 0 ? 'left' : 'right'}}">
+        <view
+            class="switch-tab-item"
+            bindtap="switchChange"
+        >
+            正在抢购
+        </view>
+        <view
+            class="switch-tab-item"
+            bindtap="switchChange"
+        >
+            下期预告
+        </view>
+    </view>
+</view>

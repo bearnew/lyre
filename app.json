@@ -1,0 +1,35 @@
+{
+  "pages":[
+    "pages/cart/index",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "省多多",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/index",
+      "iconPath": "assets/svg/home.png",
+      "selectedIconPath": "assets/svg/home_selected.png",
+      "text": "首页"
+    }, {
+      "pagePath": "pages/cart/index",
+      "iconPath": "assets/svg/cart.png",
+      "selectedIconPath": "assets/svg/cart_selected.png",
+      "text": "购物车"
+    }, {
+      "pagePath": "pages/logs/logs",
+      "iconPath": "assets/svg/mine.png",
+      "selectedIconPath": "assets/svg/mine_selected.png",
+      "text": "日志"
+    }],
+    "backgroundColor": "white",
+    "borderStyle": "white",
+    "color": "#ccc",
+    "selectedColor": "#ff6054"
+  }
+}

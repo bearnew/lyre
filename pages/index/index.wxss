@@ -1,0 +1,9 @@
+/**index.wxss**/
+.container {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  padding: 0 10px;
+}
+.goods-list {
+  width: 100%;
+}

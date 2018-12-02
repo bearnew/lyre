@@ -1,0 +1,43 @@
+.switch-tab-wrapper {
+    position: relative;
+    margin: 10px auto;
+}
+.switch-tab {
+    display: flex;
+    background: #eee;
+    font-size: 14px;
+    border-radius: 20px;
+    overflow: hidden;
+    background-image: linear-gradient(to right,#FFEA00, #FFEA00 49%, transparent 50%);
+}
+.switch-tab-item {
+    flex: 1;
+    padding: 8px 20px;
+}
+.left {
+    background-position: 0 0;
+    animation: toLeft 200ms linear;
+}
+
+.right {
+    background-position: 96px 0;
+    animation: toRight 200ms linear;
+}
+
+@keyframes toRight {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 96px 0;
+    }
+}
+
+@keyframes toLeft {
+    0% {
+        background-position: 96px 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}

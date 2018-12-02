@@ -1,0 +1,38 @@
+<view>
+    <scroll-view class="list">
+        <view class="cart" wx:for="{{cartsList}}" wx:key="{{item.id}}" wx:for-item="item">
+            <view class="left" bindtap="selectGood" data-id="{{item.id}}">
+                <icon wx:if="{{item.isSelected}}" type="success" size="24" color="#ff6054" />
+                <view wx:else class="unSelect"></view>
+            </view>
+            <view class="center">
+                <image src="{{item.img}}" />
+            </view>
+            <view class="right">
+                <view class="header">
+                    <view>{{item.title}}</view>
+                    <view class="iconfont icon-shanchu" bindtap="removeGood" data-id="{{item.id}}"></view>
+                </view>
+                <view class="footer">
+                    <view class="price">¥{{item.price}}</view>
+                    <view class="caculate">
+                        <view class="reduce" bindtap="reduce" data-id="{{item.id}}">-</view>
+                        <view class="count">{{item.count}}</view>
+                        <view class="increase" bindtap="increase" data-id="{{item.id}}">+</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+    <view class="total">
+        <view bindtap="selectAll">
+            <icon wx:if="{{selectedAll}}" type="success" size="24" color="#ff6054" />
+            <view wx:else class="unSelect"></view>
+            <text class="all">全选</text>
+        </view>
+        <view>
+            <text class="sum">总计 ¥{{totalPrice}}</text>
+            <text class="pay">去结算</text>
+        </view>
+    </view>
+</view>

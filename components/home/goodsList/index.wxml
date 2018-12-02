@@ -1,0 +1,22 @@
+<view class="goods" wx:for="{{list}}" wx:key="{{item.id}}" wx:for-item="item">
+    <view class="img">
+        <image src="{{item.img}}" mode="aspectFill" />
+    </view>
+    <view class="content">
+        <view class="title">{{item.title}}</view>
+        <view class="description">{{item.content}}</view>
+        <view class="sales">已售{{item.salesNumber}}件</view>
+        <view class="footer">
+            <view class="price-box">
+                <text class="group">团购价</text>
+                <view>
+                    <text class="price">¥{{item.price}}</text>
+                    <text class="origin-price">¥{{item.originPrice}}</text>
+                </view>
+            </view>
+            <view class="purchase" data-id="{{item.id}}" bindtap="addCart">
+                <text>立即抢购</text>
+            </view>
+        </view>
+    </view>
+</view>

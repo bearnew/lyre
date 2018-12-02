@@ -1,0 +1,6 @@
+<!--index.wxml-->
+<view class="container">
+	<swiper />
+	<switch-tab />
+	<goods-list class="goods-list" list="{{goodsList}}" />
+</view>

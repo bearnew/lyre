@@ -1,0 +1,118 @@
+.list {
+    padding-bottom: 55px;
+}
+.cart {
+    box-sizing: border-box;
+    display: flex;
+    margin-bottom: 20px;
+    padding-right: 10px;
+    font-size: 16px;
+}
+.unSelect {
+    width: 20px;
+    height: 20px;
+    border: 2px #ddd solid;
+    border-radius: 50%;
+}
+.left {
+    display: flex;
+    width: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.center {
+    width: 80px;
+    height: 80px;
+}
+.center image {
+    width: 80px;
+    height: 80px;
+}
+
+.right {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 5px; 
+}
+.right .header {
+    display: flex;
+    justify-content: space-between;
+}
+.right .header .icon-shanchu {
+    font-size: 24px;
+    color: #999;
+}
+.right .footer {
+    display: flex;
+    justify-content: space-between;
+}
+.right .footer .price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff6054;
+}
+.right .footer .caculate {
+    display: flex;
+    line-height: 24px;
+}
+.right .footer .caculate view {
+    width: 40px;
+    text-align: center;
+}
+.caculate .reduce,
+.caculate .increase {
+    font-size: 24px;
+    border: 1px #ddd solid;
+}
+.caculate .reduce {
+    border-radius: 5px 0 0 5px;
+}
+.caculate .increase {
+    border-radius: 0 5px 5px 0;
+}
+.caculate .count {
+    border-width:1px 0;
+    border-color:#ddd;
+    border-style:solid;
+}
+
+.total {
+    position: fixed;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    bottom: 0;
+    font-size: 16px;
+    padding: 5px 10px 10px;
+    background: #FFF;
+    box-shadow:0 1px 5px 1px #ccc;
+}
+.total .unSelect,
+.total .all {
+    display: inline-block;
+    line-height: 40px;
+}
+.total .all {
+    margin-left: 8px;
+}
+.total icon,
+.total .unSelect {
+    position: relative;
+    top: 6px;
+}
+.total .sum {
+    font-size: 16px;
+    font-weight: bold;
+    color: #ff6054;
+    margin-right: 12px;
+}
+.total .pay {
+    display: inline-block;
+    background: #feea00;
+    padding: 8px 15px;
+    border-radius: 20px;
+}
