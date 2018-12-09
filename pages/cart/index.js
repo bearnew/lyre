@@ -13,12 +13,13 @@ create(store, {
 	onLoad: function() {
 		computed(this, {
 			totalPrice: function() {
-			  return this.data.cartsList.reduce((acc, item) => {
+			  const totalPrice = this.data.cartsList.reduce((acc, item) => {
 				if (item.isSelected) {
 					acc += item.price * item.count;
 				}
 				return acc;
 			  }, 0)
+			  return totalPrice.toFixed(2);
 			}
 		})
 	},
@@ -32,7 +33,6 @@ create(store, {
 	// 页面显示时，判断是否应该选中所有购物车商品
 	setSelectAll: function() {
 		const { cartsList } = this.store.data;
-		console.log(cartsList)
 
 		if (cartsList.length === 0) {
 			this.setData({
@@ -41,7 +41,6 @@ create(store, {
 			return;
 		}
 
-		console.log(cartsList)
 		if (cartsList.some(item => item.isSelected === false)) {
 			this.setData({
 				selectedAll: false
