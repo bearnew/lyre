@@ -24,20 +24,8 @@ function defineReactive(ctx, key, val, watchFn, computedFn) {
 		},
 	})
 	for (let i in data) {
-		console.log(Object.prototype.toString.call(data[i]))
-		if (Object.prototype.toString.call(data[i]) === '[object Object]') {
-			ctx.data[i] = new Proxy(ctx.data[i], {
-				get: function(target, key, receiver) {
-					return Reflect.get(target, key, receiver);
-				},
-				set: function(target, key, val, receiver) {
-					return Reflect.set(target, key, val, receiver);
-				}
-			})
-		}
-
-		if (Object.prototype.toString.call(data[i]) === '[object Array]') {
-			ctx.data[i] = new Proxy(ctx.data[i], {
+		if (['Object', 'Array'].includes(Object.prototype.toString.call(data[i]))) {
+			ctx.data[i] = new Proxy(data[i], {
 				get: function(target, key, receiver) {
 					return Reflect.get(target, key, receiver);
 				},
@@ -64,7 +52,6 @@ function defineReactive(ctx, key, val, watchFn, computedFn) {
 	
 	// computed 函数
 	function computed(ctx, obj) {
-	console.log(ctx.data)
 	let computedKeys = Object.keys(obj)//computed 对象集合
 	let computedFn = [];//computedFn存储computed计算操作
 	let computedObj = computedKeys.reduce((total, next) => {
