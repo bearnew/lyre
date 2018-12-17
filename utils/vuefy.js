@@ -24,13 +24,13 @@ function defineReactive(ctx, key, val, watchFn, computedFn) {
 		},
 	})
 	for (let i in data) {
-		if (['Object', 'Array'].includes(Object.prototype.toString.call(data[i]))) {
+		if (['Object', 'Array'].includes(Object.prototype.toString.call(data[i]).replace(/.+\s(\w+)\]/, '$1'))) {
 			ctx.data[i] = new Proxy(data[i], {
 				get: function(target, key, receiver) {
 					return Reflect.get(target, key, receiver);
 				},
 				set: function(target, key, val, receiver) {
-					data[i]
+					console.log('set')
 					return Reflect.set(target, key, val, receiver);
 				}
 			})

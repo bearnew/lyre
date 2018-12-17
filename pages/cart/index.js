@@ -8,20 +8,21 @@ const { CART_LIST } = storageKey;
 create(store, {
 	data: {
 		cartsList: [],
-		selectedAll: false
+		selectedAll: false,
+		totalPrice: 0
 	},
 	onLoad: function() {
-		computed(this, {
-			totalPrice: function() {
-			  const totalPrice = this.data.cartsList.reduce((acc, item) => {
-				if (item.isSelected) {
-					acc += item.price * item.count;
-				}
-				return acc;
-			  }, 0)
-			  return totalPrice.toFixed(2);
-			}
-		})
+		// computed(this, {
+		// 	totalPrice: function() {
+		// 	  const totalPrice = this.data.cartsList.reduce((acc, item) => {
+		// 		if (item.isSelected) {
+		// 			acc += item.price * item.count;
+		// 		}
+		// 		return acc;
+		// 	  }, 0)
+		// 	  return totalPrice.toFixed(2);
+		// 	}
+		// })
 	},
 	onUnload: function() {
 		const cartStore = Storage.getInstance(CART_LIST);
@@ -29,6 +30,7 @@ create(store, {
 	},
 	onShow: function() {
 		this.setSelectAll();
+		this.calculate();
 	},
 	// 页面显示时，判断是否应该选中所有购物车商品
 	setSelectAll: function() {
@@ -62,7 +64,7 @@ create(store, {
 			}
 		});
 		this.setSelectAll();
-		this.update();
+		this.calculate();
 	},
 	// 删除购物车商品
 	removeGood: function(event) {
@@ -89,22 +91,22 @@ create(store, {
 	// 减少购物车商品数量
 	reduce: function(event) {
 		this.data.cartsList.map(item => {
-			if (item.id === event.currentTarget.dataset.id) {
+			if (item.id === event.currentTarget.dataset.id && item.count !== 1) {
 				item.count --;
 				return;
 			}
 		})
-		this.update();
+		this.calculate();
 	},
 	// 增加购物车商品数量
 	increase: function(event) {
-		this.data.cartsList.map(item => {
+		this.data.cartsList.map((item, index) => {
 			if (item.id === event.currentTarget.dataset.id) {
 				item.count ++;
 				return;
 			}
 		})
-		this.update();
+		this.calculate();
 	},
 	// 选中所有商品
 	selectAll: function() {
@@ -113,6 +115,19 @@ create(store, {
 		})
 		this.store.data.cartsList.map(item => {
 			item.isSelected = this.data.selectedAll;
+		})
+		this.calculate();
+	},
+	// 计算总价
+	calculate: function() {
+		const totalPrice = this.data.cartsList.reduce((total, item) => {
+			if (item.isSelected) {
+				return total += item.price * Number(item.count);
+			}
+			return total;
+		}, 0);
+		this.setData({
+			totalPrice: totalPrice.toFixed(2)
 		})
 		this.update();
 	}

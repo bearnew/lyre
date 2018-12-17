@@ -1,0 +1,11 @@
+<view class="tab-wrapper">
+    <view
+        wx:for="{{tabs}}"
+        wx:key="{{id}}"
+        class="tab {{item.isSelected ? 'selected' : ''}}"
+        bindtap="onTabClick"
+        data-id="{{item.id}}"
+    >
+        {{item.text}}
+    </view>
+</view>

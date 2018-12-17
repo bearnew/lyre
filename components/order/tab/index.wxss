@@ -1,0 +1,10 @@
+.tab-wrapper {
+    display: flex;
+    justify-content: space-around;
+    font-size: 14px;
+}
+.tab-wrapper .selected {
+    color: #ff6054;
+    padding-bottom: 5px; 
+    border-bottom: 1.5px #ff6054 solid;
+}

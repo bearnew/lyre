@@ -1,0 +1,15 @@
+.address {
+
+}
+.address .add {
+    position:fixed;
+    left:10%;
+    bottom:10px;
+    width:80%;
+    font-size: 16px;
+    background:#FFEA00;
+    color:#FFF;
+    text-align:center;
+    border-radius:20px;
+    line-height:45px;
+}

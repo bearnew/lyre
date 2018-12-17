@@ -1,0 +1,7 @@
+<view class="order">
+    <tab tabs="{{tabs}}" bind:changeTab="changeTab" />
+    <no-result
+        icon-class="iconfont icon-qunfengzanwudingdan"
+        text="暂无订单"
+    />
+</view>

@@ -1,0 +1,4 @@
+<view class="no-result">
+    <i class="icon-class icon"></i>
+    <view class="text">{{text}}</view>
+</view>

@@ -1,8 +1,10 @@
 {
   "pages":[
-    "pages/cart/index",
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/cart/index",
+    "pages/mine/index",
+    "pages/mine/order/index",
+    "pages/mine/address/index"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -22,10 +24,10 @@
       "selectedIconPath": "assets/svg/cart_selected.png",
       "text": "购物车"
     }, {
-      "pagePath": "pages/logs/logs",
+      "pagePath": "pages/mine/index",
       "iconPath": "assets/svg/mine.png",
       "selectedIconPath": "assets/svg/mine_selected.png",
-      "text": "日志"
+      "text": "我的"
     }],
     "backgroundColor": "white",
     "borderStyle": "white",

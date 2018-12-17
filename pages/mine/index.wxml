@@ -1,0 +1,38 @@
+<!--index.wxml-->
+<view class="mine">
+	<view class="user">
+        <image src="{{userInfo.avatarUrl}}" class="slide-image" width="80" height="80" />
+        <view class="info">
+            <view class="name">{{userInfo.nickName}}</view>
+            <view class="city">{{userInfo.city}}</view>
+        </view>
+    </view>
+    <view class="order">
+        <view class="header" bindtap="gotoOrder" data-id="{{0}}">
+            全部订单
+            <i class="iconfont icon-arrow_right" />
+        </view>
+        <view class="content">
+            <view
+                class="item"
+                wx:for="{{orderTabs}}"
+                wx:key="{{item.id}}"
+                data-id="{{item.id}}"
+                bindtap="gotoOrder"
+            >
+                <i class="iconfont {{item.icon}}" />
+                <view>{{item.text}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="other">
+        <view class="row">
+            联系我们
+            <i class="iconfont icon-arrow_right" />
+        </view>
+        <view class="row" bindtap="gotoAddress">
+            我的收货地址
+            <i class="iconfont icon-arrow_right" />
+        </view>
+    </view>
+</view>

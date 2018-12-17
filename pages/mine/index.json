@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+        "swiper": "../../components/home/swiper/index",
+        "switch-tab": "../../components/home/switchTab/index",
+        "goods-list": "../../components/home/goodsList/index"
+    }
+}

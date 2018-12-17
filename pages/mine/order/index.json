@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "tab": "../../../components/order/tab/index",
+        "no-result": "../../../components/common/noResult/index"
+    }
+}

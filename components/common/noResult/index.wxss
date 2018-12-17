@@ -1,0 +1,13 @@
+.no-result {
+    margin: 50px auto;
+    font-size: 14px;
+    text-align: center;
+    color: #ccc;
+}
+.no-result .icon {
+    font-size: 120px;
+    color: #e6e6e6;
+}
+.text {
+    margin-top: 15px;
+}

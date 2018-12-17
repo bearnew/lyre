@@ -1,6 +1,8 @@
 //index.js
-import store from '../../store'
-import create from '../../utils/create'
+import store from '../../store';
+import create from '../../utils/create';
+import api from '../../utils/api';
+import QQMapWX from '../../assets/js/qqmap/qqmap-wx-jssdk.min.js';
 //获取应用实例
 const app = getApp()
 
@@ -10,10 +12,68 @@ create(store, {
 	},
 	onLoad: function () {
 		this.getGoodsList();
-		console.log(app)
+		this.getRegion();
 	},
-	ready: function() {
-		console.log('index')
+	// 获取位置信息
+	getRegion: function() {
+		this.getLocation().then(res => {
+			return {
+				latitude: res.latitude,
+				longitude: res.longitude
+			}
+		}).then(res => {
+			return this.getCityString(res.latitude, res.longitude)
+		}).then(res => {
+			this.getCityId(res.address_component.city);
+		}).catch(err => {
+			console.error(err);
+		});
+	},
+	// 获取经度纬度
+	getLocation: function() {
+		return new Promise((resolve, reject) => {
+			wx.getLocation({
+				type: 'wgs84',
+				success(res) {
+					resolve(res);
+				},
+				fail(res) {
+					reject(res);
+				}
+			})
+		})
+	},
+	// 根据经度，纬度获取城市
+	getCityString: function(latitude, longitude) {
+		// https://lbs.qq.com/console/setting.html?key=SFSBZ-XN4KO-CCHWS-SN7GW-BNCPS-CPFSH
+		const qqmapsdk = new QQMapWX({
+			key: 'SFSBZ-XN4KO-CCHWS-SN7GW-BNCPS-CPFSH' // 腾讯map 个人账户key
+		});
+		return new Promise((resolve, reject) => {
+			qqmapsdk.reverseGeocoder({
+				location: {
+					latitude,
+					longitude
+				},
+				success: function(res) {
+					resolve(res.result);
+				},
+				fail: function(res) {
+					reject(res);
+				}
+			});
+
+		})
+	},
+	// 根据城市，获取城市id
+	getCityId: function(cityString) {
+		api.post('/v1/region/findData', {
+			regionName: cityString
+		}).then(res => {
+			console.log(res);
+		}).catch(err => {
+			console.error(err);
+		})
 	},
 	getGoodsList: function() {
 		// 商品列表

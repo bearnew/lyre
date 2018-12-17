@@ -1,0 +1,55 @@
+/**index.wxss**/
+.mine {
+    padding: 0 12px;
+    font-size: 14px;
+}
+.user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.user image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+.user .info {
+    flex: 1;
+    padding-left: 10px;
+}
+.info .name {
+    font-weight: bold;
+}
+.order .header {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.order .content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+.order .item {
+    text-align: center;
+    font-size: 12px;
+}
+.order .item i {
+    font-size: 26px;
+}
+.order .item view {
+    margin-top: 3px;
+}
+.other {
+    margin-top: 20px;
+    border-top: 1px solid #f3f3f3;
+}
+.other .row {
+    display: flex;
+    justify-content: space-between; 
+    font-size: 16px;
+    line-height: 50px;
+    border-bottom: 1px solid #f3f3f3;
+}
