@@ -1,3 +1,35 @@
-<view class="add">
-    
-</view>
+<form bindsubmit="formSubmit" bindreset="formReset">
+    <view class="section">
+        <text class="section-title">城市:</text>
+        <picker bindchange="handleCityChange" value="{{cityIndex}}" range="{{citys}}">
+            <view class="picker">
+                {{citys[cityIndex]}}
+                <i class="iconfont icon-arrow_right" />
+            </view>
+        </picker>
+    </view>
+    <view class="section">
+        <text class="section-title">小区:</text>
+        <picker bindchange="handleCityChange" value="{{areaIndex}}" range="{{areas}}">
+            <view class="picker">
+                {{areas[areaIndex]}}
+                <i class="iconfont icon-arrow_right" />
+            </view>
+        </picker>
+    </view>
+    <view class="section">
+        <text class="section-title">详细地址:</text>
+        <input bindinput="bindKeyInput" placeholder="输入同步到view中" />
+    </view>
+    <view class="section">
+        <text class="section-title">联系人:</text>
+        <input bindinput="bindKeyInput" placeholder="输入同步到view中" />
+    </view>
+    <view class="section">
+        <text class="section-title">手机号:</text>
+        <input bindinput="bindKeyInput" placeholder="输入同步到view中" />
+    </view>
+    <view class="btn-area">
+        <button form-type="submit">保存</button>
+    </view>
+</form>

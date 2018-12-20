@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/mine/address/add/index",
     "pages/index/index",
     "pages/cart/index",
     "pages/mine/index",
@@ -10,7 +11,8 @@
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "省多多",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle":"black",
+    "backgroundColor": "#eeeeee"
   },
   "tabBar": {
     "list": [{

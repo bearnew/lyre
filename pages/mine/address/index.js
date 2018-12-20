@@ -12,5 +12,10 @@ create(store, {
 	},
     changeTab: function(e) {
         this.changeTabId(e.detail.id)
-    },
+	},
+	addAddress: function() {
+		wx.navigateTo({
+			url: 'add/index'
+		})
+	}
 })

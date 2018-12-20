@@ -1,0 +1,25 @@
+.section {
+    display: flex;
+    font-size: 16px;
+    border-bottom: 1px #f3f3f3 solid;
+    padding: 12px;
+    background: #fff;
+}
+.section .section-title {
+    width: 80px;
+}
+.section picker {
+    flex: 1;
+    padding-left: 12px;
+}
+.section picker i {
+    float: right;
+}
+.btn-area {
+    margin-top: 30px;
+}
+.btn-area button {
+    margin: 20px;
+    background: #FFEA00;
+    border-radius: 20px;
+}
