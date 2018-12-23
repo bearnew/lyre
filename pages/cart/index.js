@@ -78,7 +78,7 @@ create(store, {
 				if (res.confirm) {
 					cartsList.splice(cartsList.findIndex(item => item.id === id), 1);
 					this.update();
-					(new Storage(CART_LIST)).remove()
+					(new Storage(CART_LIST)).set(cartsList)
 				} else if (res.cancel) {
 					console.log('用户点击取消')
 				}

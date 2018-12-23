@@ -1,11 +1,12 @@
 {
   "pages":[
-    "pages/mine/address/add/index",
+    "pages/mine/address/index",
     "pages/index/index",
     "pages/cart/index",
     "pages/mine/index",
     "pages/mine/order/index",
-    "pages/mine/address/index"
+    "pages/mine/address/add/index",
+    "pages/mine/address/areas/index"
   ],
   "window":{
     "backgroundTextStyle":"light",

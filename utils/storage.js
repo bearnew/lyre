@@ -10,7 +10,7 @@ export default class Storage {
 
     static getInstance(key, isSync = false) {
         // 已经实例化了，返回第一次实例化对象的引用
-        if (this.instance && this.instance.key === key) {
+        if (this.instance && this.instance.key === key && this.instance.isSync === isSync) {
             return this.instance;
         }
 

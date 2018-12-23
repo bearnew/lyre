@@ -1,33 +1,31 @@
 <form bindsubmit="formSubmit" bindreset="formReset">
     <view class="section">
         <text class="section-title">城市:</text>
-        <picker bindchange="handleCityChange" value="{{cityIndex}}" range="{{citys}}">
-            <view class="picker">
+        <picker class="picker" name="city" bindchange="handleCityChange" value="{{cityIndex}}" range="{{citys}}">
+            <view>
                 {{citys[cityIndex]}}
                 <i class="iconfont icon-arrow_right" />
             </view>
         </picker>
     </view>
-    <view class="section">
+    <view class="section" bindtap="handleAreaChange">
         <text class="section-title">小区:</text>
-        <picker bindchange="handleCityChange" value="{{areaIndex}}" range="{{areas}}">
-            <view class="picker">
-                {{areas[areaIndex]}}
-                <i class="iconfont icon-arrow_right" />
-            </view>
-        </picker>
+        <view class="picker">
+            <input name="area" value="{{area}}" disabled="{{true}}" />
+            <i class="iconfont icon-arrow_right" />
+        </view>
     </view>
     <view class="section">
         <text class="section-title">详细地址:</text>
-        <input bindinput="bindKeyInput" placeholder="输入同步到view中" />
+        <input name="address" value="{{address.address}}" bindinput="bindKeyInput" placeholder="如楼栋号，单元室，门牌号等" />
     </view>
     <view class="section">
         <text class="section-title">联系人:</text>
-        <input bindinput="bindKeyInput" placeholder="输入同步到view中" />
+        <input name="name" value="{{address.name}}"  bindinput="bindKeyInput" placeholder="请输入联系人姓名" />
     </view>
     <view class="section">
         <text class="section-title">手机号:</text>
-        <input bindinput="bindKeyInput" placeholder="输入同步到view中" />
+        <input name="phone" value="{{address.phone}}" type="number" bindinput="bindKeyInput" placeholder="请输入联系电话" />
     </view>
     <view class="btn-area">
         <button form-type="submit">保存</button>

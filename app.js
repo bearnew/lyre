@@ -1,4 +1,6 @@
 //app.js
+import api from './utils/api';
+
 App({
   onLaunch: function () {
     // 展示本地存储能力
@@ -10,6 +12,13 @@ App({
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        api.post('http://47.110.59.224:8091/tapi/v1/customerInfo/login', {
+          jsCode: res.code
+        }).then(res => {
+          console.log(res);
+        }).catch(err => {
+          console.error(err);
+        })
       }
     })
     // 获取用户信息

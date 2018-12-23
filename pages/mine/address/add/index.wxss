@@ -1,19 +1,28 @@
 .section {
     display: flex;
+    margin: 0 12px;
     font-size: 16px;
     border-bottom: 1px #f3f3f3 solid;
-    padding: 12px;
+    height: 50px;
+    line-height: 50px;
     background: #fff;
 }
 .section .section-title {
     width: 80px;
 }
-.section picker {
+.section .picker {
     flex: 1;
     padding-left: 12px;
 }
-.section picker i {
+.section .picker input[name="area"] {
+    display: inline-block;
+    padding-left: 0;
+}
+.section .picker i {
     float: right;
+}
+.section input {
+    padding: 12px;
 }
 .btn-area {
     margin-top: 30px;

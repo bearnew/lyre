@@ -1,0 +1,16 @@
+<view class="areas">
+    <view class="header">
+        <input bindinput="inputChange" placeholder="请输入小区名称" />
+        <view class="search">搜索</view>
+    </view>
+    <view
+        class="community"
+        wx:for="{{areaResults}}"
+        wx:key="{{index}}"
+        data-name="{{item.name}}"
+        bindtap="selectArea"
+    >
+        <view class="name">{{item.name}}</view>
+        <view class="address">{{item.address}}</view>
+    </view>
+</view>

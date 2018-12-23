@@ -1,10 +1,48 @@
 .address {
-
+    background: #f3f3f3;
+    font-size: 16px;
+}
+.address .list {
+    margin-bottom: 65px;
+}
+.address .row {
+    line-height: 38px;
+    padding: 0 12px;
+    margin-bottom: 10px;
+    background: #fff;
+}
+.address .row .header {
+    display: flex;
+    justify-content: space-between;
+}
+.address .row .detail {
+    border-bottom: 1px #f3f3f3 solid;
+}
+.address .row .action {
+    display: flex;
+    justify-content: space-between;
+}
+.row .action .icon-xuanzhong {
+    color: #ff6054;   
+}
+.address .row .action .right {
+    display: flex;
+}
+.action .right .edit {
+    margin-right: 10px;
+}
+.address .row i {
+    margin-right: 5px;
+}
+.address .add-wrapper {
+    position:fixed;
+    bottom:0;
+    width:100%;
+    padding: 10px 0;
+    background:#fff;
 }
 .address .add {
-    position:fixed;
-    left:10%;
-    bottom:10px;
+    margin: 0 10%;
     width:80%;
     font-size: 16px;
     background:#FFEA00;
