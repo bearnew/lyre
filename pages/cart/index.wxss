@@ -45,6 +45,10 @@
     font-size: 24px;
     color: #999;
 }
+.right .content {
+    font-size: 14px;
+    color: #999;
+}
 .right .footer {
     display: flex;
     justify-content: space-between;
@@ -110,7 +114,7 @@
     color: #ff6054;
     margin-right: 12px;
 }
-.total .pay {
+.total .submit {
     display: inline-block;
     background: #feea00;
     padding: 8px 15px;

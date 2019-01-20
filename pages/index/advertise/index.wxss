@@ -1,0 +1,7 @@
+.advertise {
+    text-align: center;
+}
+.advertise image {
+    width: 98%;
+    border-radius: 4px;
+}

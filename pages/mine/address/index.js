@@ -6,14 +6,22 @@ import storageKey from '../../../constant/storageKey';
 const { ADDRESS_LIST } = storageKey;
 //获取应用实例
 const app = getApp()
+const addressStore = Storage.getInstance(ADDRESS_LIST);
 
 create(store, {
 	data: {
-		addressList: [],
-		selectedId: 1
+		addressList: []
 	},
-	onLoad: function () {
-		console.log(this)
+	onLoad: function (option) {
+		if (option.from) {
+			this.setData({
+				from: option.from
+			})
+		}
+		console.log('1231231', addressStore.get())
+		this.setData({
+			addressList: addressStore.get()
+		})
 	},
     changeTab: function(e) {
         this.changeTabId(e.detail.id)
@@ -24,10 +32,24 @@ create(store, {
 		})
 	},
 	defaultSelect: function(event) {
+		event.stopPropagation();
 		const id = event.currentTarget.dataset.id;
-		this.setData({
-			selectedId: id
+		this.data.addressList.map(item => {
+			item.isDefault = false;
+			if (item.id === id) {
+				item.isDefault = true;
+			}
 		})
+		this.update();
+		addressStore.set(this.data.addressList);
+	},
+	selectAddressToPay: function(event) {
+		if (this.data.from === 'pay') {
+			const id = event.currentTarget.dataset.id;
+			wx.navigateTo({
+				url: `/pages/cart/pay/index?id=${id}`
+			})
+		}
 	},
 	edit: function(event) {
 		const id = event.currentTarget.dataset.id;
@@ -49,7 +71,7 @@ create(store, {
 						addressList
 					})
 					this.update();
-					(new Storage(ADDRESS_LIST)).set(addressList)
+					addressStore.set(addressList)
 				} else if (res.cancel) {
 					console.log('用户点击取消')
 				}

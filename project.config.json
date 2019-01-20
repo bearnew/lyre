@@ -1,5 +1,5 @@
 {
-	"description": "项目配置文件。",
+	"description": "项目配置文件",
 	"packOptions": {
 		"ignore": []
 	},
@@ -8,12 +8,16 @@
 		"es6": true,
 		"postcss": true,
 		"minified": true,
-		"newFeature": true
+		"newFeature": true,
+		"autoAudits": false
 	},
-	"compileType": "miniApp",
-	"libVersion": "2.0.4",
-	"appid": "wx9760bd82501e6793",
-	"projectname": "lyre",
+	"compileType": "miniprogram",
+	"libVersion": "2.4.3",
+	"appid": "wxf9194d9c6045f2bd",
+	"projectname": "sdd",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
 	"isGameTourist": false,
 	"condition": {
 		"search": {

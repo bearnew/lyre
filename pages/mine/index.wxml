@@ -26,7 +26,7 @@
         </view>
     </view>
     <view class="other">
-        <view class="row">
+        <view class="row" bindtap="gotoContact">
             联系我们
             <i class="iconfont icon-arrow_right" />
         </view>

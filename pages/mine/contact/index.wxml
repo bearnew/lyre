@@ -1,0 +1,5 @@
+<view class="contact">
+    <image src="../../../assets/img/panqiang.jpg" mode="aspectFill" />
+    <view>联系人：潘经理</view>
+    <view>联系电话：18215552806</view>
+</view>

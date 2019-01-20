@@ -8,7 +8,7 @@
     duration="{{duration}}"
 >
     <block wx:for="{{imgUrls}}" wx:key="{{index}}">
-        <swiper-item>
+        <swiper-item bind:tap="loadAd" data-index="{{index}}">
             <image src="{{item}}" class="slide-image" width="355" height="150"/>
         </swiper-item>
     </block>

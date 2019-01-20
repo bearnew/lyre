@@ -1,17 +1,21 @@
 <view class="goods" wx:for="{{list}}" wx:key="{{item.id}}" wx:for-item="item">
     <view class="img">
-        <image src="{{item.img}}" mode="aspectFill" />
+        <!-- <image src="{{item.img}}" mode="aspectFill" /> -->
+        <image
+            src="https://gss2.bdstatic.com/9fo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike80%2C5%2C5%2C80%2C26/sign=897de178a61ea8d39e2f7c56f6635b2b/1e30e924b899a901f68f0df51d950a7b0308f5bf.jpg"
+            mode="aspectFill"
+        />
     </view>
     <view class="content">
-        <view class="title">{{item.title}}</view>
-        <view class="description">{{item.content}}</view>
-        <view class="sales">已售{{item.salesNumber}}件</view>
+        <view class="title">{{item.name}}</view>
+        <view class="description">{{item.note}}</view>
+        <view class="sales">已售{{item.salesVolume}}件</view>
         <view class="footer">
             <view class="price-box">
-                <text class="group">团购价</text>
+                <text class="group">{{item.title}}</text>
                 <view>
-                    <text class="price">¥{{item.price}}</text>
-                    <text class="origin-price">¥{{item.originPrice}}</text>
+                    <text class="price">¥{{item.resucedPrice}}</text>
+                    <text class="origin-price">¥{{item.price}}</text>
                 </view>
             </view>
             <view class="purchase" data-id="{{item.id}}" bindtap="addCart">

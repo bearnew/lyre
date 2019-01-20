@@ -1,0 +1,7 @@
+<view class="advertise">
+    <image
+        src="{{imgUrls[index]}}"
+        mode="aspectFill"
+    />
+    <view>这是一个广告详情</view>
+</view>

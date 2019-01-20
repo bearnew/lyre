@@ -6,15 +6,20 @@
                 <view wx:else class="unSelect"></view>
             </view>
             <view class="center">
-                <image src="{{item.img}}" />
+                <!-- <image src="{{item.img}}" /> -->
+                <image
+                    src="https://gss2.bdstatic.com/9fo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike80%2C5%2C5%2C80%2C26/sign=897de178a61ea8d39e2f7c56f6635b2b/1e30e924b899a901f68f0df51d950a7b0308f5bf.jpg"
+                    mode="aspectFill"
+                />
             </view>
             <view class="right">
                 <view class="header">
-                    <view>{{item.title}}</view>
+                    <view>{{item.name}}</view>
                     <view class="iconfont icon-shanchu" bindtap="removeGood" data-id="{{item.id}}"></view>
                 </view>
+                <view class="content">{{item.note}}</view>
                 <view class="footer">
-                    <view class="price">¥{{item.price}}</view>
+                    <view class="price">¥{{item.resucedPrice}}</view>
                     <view class="caculate">
                         <view class="reduce" bindtap="reduce" data-id="{{item.id}}">-</view>
                         <view class="count">{{item.count}}</view>
@@ -24,6 +29,11 @@
             </view>
         </view>
     </scroll-view>
+    <no-result
+        wx:if="{{noResult}}"
+        icon-class="iconfont icon-gouwuche1"
+        text="快去添加商品到购物车吧"
+    />
     <view class="total">
         <view bindtap="selectAll">
             <icon wx:if="{{selectedAll}}" type="success" size="24" color="#ff6054" />
@@ -32,7 +42,7 @@
         </view>
         <view>
             <text class="sum">总计 ¥{{totalPrice}}</text>
-            <text class="pay">去结算</text>
+            <text class="submit" bind:tap="createOrder">去结算</text>
         </view>
     </view>
 </view>

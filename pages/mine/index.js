@@ -38,12 +38,16 @@ create(store, {
 	onLoad: function () {
 		this.setData({
             userInfo: app.globalData.userInfo
-        })
+		})
 	},
 	gotoOrder: function(e) {
-		console.log(e)
 		wx.navigateTo({
 			url: `order/index?id=${e.currentTarget.dataset.id}`
+		})
+	},
+	gotoContact: function(e) {
+		wx.navigateTo({
+			url: '/pages/mine/contact/index'
 		})
 	},
 	gotoAddress: function(e) {

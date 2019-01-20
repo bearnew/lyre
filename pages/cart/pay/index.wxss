@@ -1,0 +1,133 @@
+.pay {
+    font-size: 14px;
+    background: #F5F5F5;
+}
+.pay .order-wrapper {
+    background: #fff;
+}
+.order-wrapper .title {
+    display: flex;
+    justify-content: space-between;
+    height: 45px;
+    line-height: 45px;
+    padding: 0 12px;
+    color: #999;
+    border-bottom: 1px #f7f5f5 solid;
+}
+.order-wrapper .order {
+    display: flex;
+    padding: 8px 12px;
+    border-bottom: 1px #f7f5f5 solid;
+}
+.order image {
+    width: 120px;
+    height: 80px;
+}
+.order .content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 5px;
+}
+.order .name {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+.order .number {
+    display: flex;
+    justify-content: space-between;
+}
+.order .price {
+    font-size: 16px;
+    color: #ff6054;
+}
+
+.delivery-info {
+    margin-top: 10px;
+    font-size: 16px;
+    padding-bottom: 10px;
+    background: #fff;
+}
+.delivery-info .title {
+    height: 45px;
+    line-height: 45px;
+    padding-left: 12px;
+    font-size: 14px;
+    color: #999;
+    text-align: left;
+    border-bottom: 1px #f7f5f5 solid;
+}
+.delivery-info .no-address {
+    text-align: center;
+}
+.delivery-info .tip {
+    color: #ccc;
+    padding: 5px 12px;
+}
+.delivery-info .add {
+    display:inline-block;
+    margin-top: 10px;
+    background:#feea00;
+    color:#fff;
+    border-radius:4px;
+    padding:8px 15px;
+}
+
+.delivery-info .info {
+    padding: 0 12px;
+    font-size: 15px;
+}
+.delivery-info .info .person {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 30px;
+}
+.delivery-info .info .address {
+    display: flex;
+}
+.delivery-info .info .address .detail {
+    padding: 0 8px;
+    flex: 1;
+}
+.delivery-info .info .address i {
+    font-size: 18px;
+}
+
+.pay .message {
+    display:flex;
+    margin-top:10px;
+    line-height:50px;
+    padding:0 12px;
+    background:#fff;
+    border-bottom: 1px #f7f5f5 solid;
+}
+.message input {
+    position: relative;
+    top: 11px;
+    left: 10px;
+}
+
+.pay .submit {
+    position:fixed;
+    display:flex;
+    justify-content:flex-end;
+    bottom:0;
+    height:50px;
+    box-shadow:0 5px 3px 5px #ccc;
+    width:100%;
+    line-height:50px;
+}
+.submit .totalPrice {
+    padding: 0 15px;
+    font-size: 16px;
+    color: #ff6054;
+}
+.submit .btn {
+    display: inline-block;
+    height: 50px;
+    padding: 0 15px;
+    color: #FFF;
+    background: linear-gradient(to right, #FC8E05, #FD5401);
+}

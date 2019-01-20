@@ -1,6 +1,13 @@
 <!--index.wxml-->
 <view class="container">
 	<swiper />
-	<switch-tab />
-	<goods-list class="goods-list" list="{{goodsList}}" />
+	<switch-tab
+		bind:switchtab="switchTab"
+	/>
+	<goods-list wx:if="{{activeIndex === 0}}" class="goods-list" list="{{goodsList}}" />
+	<no-result
+        wx:else
+        icon-class="iconfont icon-jingqingqidai"
+        text="暂无下期预告"
+    />
 </view>

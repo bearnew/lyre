@@ -1,14 +1,14 @@
 <view class="address">
     <view class="list">
-        <view class="row" wx:for="{{addressList}}" wx:key="{{item.id}}">
+        <view class="row" wx:for="{{addressList}}" wx:key="{{item.id}}" data-id="{{item.id}}" bind:tap="selectAddressToPay">
             <view class="header">
                 <view class="name">{{item.name}}</view>
                 <view class="phone">{{item.phone}}</view>
             </view>
-            <view class="detail">{{item.address}}</view>
+            <view class="detail">{{item.city + ' ' + item.area + ' ' + item.address}}</view>
             <view class="action">
                 <view bindtap="defaultSelect" data-id="{{item.id}}">
-                    <i class="iconfont {{selectedId === item.id ? 'icon-xuanzhong' : 'icon-weixuanzhong'}}" />
+                    <i class="iconfont {{item.isDefault ? 'icon-xuanzhong' : 'icon-weixuanzhong'}}" />
                     默认地址
                 </view>
                 <view class="right">
